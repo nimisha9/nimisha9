@@ -1,0 +1,61 @@
+
+movie={"shyam"=>2,"ram"=>3}
+puts "add for adding, delete for removing,update for updating,display for displaying"
+request=gets.chomp
+
+if request == "display"
+  movie.each do|mov,rate|
+   puts "#{mov}: #{rate}"
+ end
+ 
+ elsif request== "add"
+     puts "enter movie to add"
+      m=gets.chomp
+      if movie[m].nil?
+          puts "enter rating"
+          r=gets.chomp
+           movie[m]=r
+           puts "#{m}-#{r}"
+       else
+           puts "exiting movie"
+       end
+   
+       
+     elsif request== "delete"
+         puts "movie to b deleted"
+         m=gets.chomp
+     
+         if movie[m].nil?
+                 puts "movie not present"
+            else
+                movie.delete(m)
+                puts "#{m} deleted"
+            end
+        
+        
+         elsif request== "update"
+             puts "enter movie to update"
+             m=gets.chomp
+             if movie[m].nil?
+                 puts "not present"
+            else
+                puts "display rating"
+                r=gets.chomp
+               movie[m]=r.to_sym
+               puts"#{m}-#{r}"
+           end
+       
+       
+         else
+             puts "wrong input"
+        end
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
